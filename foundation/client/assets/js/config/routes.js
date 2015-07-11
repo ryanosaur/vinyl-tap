@@ -8,7 +8,7 @@
     $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'templates/home.html',
+      templateUrl: 'templates/listServices.html',
       controller: 'ServiceController'
     });
 
@@ -20,4 +20,3 @@
     $locationProvider.hashPrefix('!');
   });
 })();
-

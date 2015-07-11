@@ -1,2 +1,6 @@
 @import "settings";
 @import "foundation";
+
+.dev-border{
+  border: 2px solid $success-color;
+}
