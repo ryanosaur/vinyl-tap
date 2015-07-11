@@ -1,5 +1,6 @@
 (function() {
   angular.module('hmo.controllers', [
-    'hmo.controller.service'
+    'hmo.controller.service',
+    'hmo.controller.newService'
   ]);
 })();

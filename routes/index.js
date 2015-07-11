@@ -6,6 +6,7 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/hmo');
 
 var Service = mongoose.model('Service', {
   title: { type: String, required: true, unique: false },
+  duration: { type: String, required: true, unique: false },
   state: { type: String, required: true, unique: false, default: 'active' },
   userid: { type: String, required: true, unique: false }
 });
@@ -48,4 +49,3 @@ router.get('/services/:id', function(req, res, next){
 });
 
 module.exports = router;
-

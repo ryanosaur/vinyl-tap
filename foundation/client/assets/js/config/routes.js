@@ -6,11 +6,23 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    .state('home', {
+    .state('services', {
       url: '/',
-      templateUrl: 'templates/listServices.html',
-      controller: 'ServiceController'
-    });
+      templateUrl: 'templates/services/list.html',
+      controller: 'ServiceController',
+      animation: {
+        enter: 'fadeIn'
+      }
+    })
+    .state('new', {
+      url: '/services/new',
+      templateUrl: 'templates/services/new.html',
+      controller: 'NewServiceController',
+      animation: {
+        enter: 'hingeInFromTop'
+      }
+    })
+    ;
 
     $locationProvider.html5Mode({
       enabled:false,

@@ -12,5 +12,7 @@
 
     //foundation
     'foundation',
+    'foundation.dynamicRouting',
+    'foundation.dynamicRouting.animations'
   ]);
 })();
