@@ -1,7 +1,43 @@
-<div class="grid-content">
-  <ul>
-    <li ng-repeat='service in services'>
-      {{ service.title }}
-    </li>
-  </ul>
+<div class="grid-block vertical shrink service-list">
+  <div class="grid-content">
+    <section class="block-list">
+      <header>List title</header>
+      <ul>
+        <li ng-repeat='service in services'>
+          <a href='#'>{{ service.title }}</a>
+        </li>
+      </ul>
+  </section>
+  </div>
 </div>
+<div class="grid-block vertical service-preview">
+  <div class="grid-block shrink">
+    <div class="grid-block shrink">
+      <div class="grid-content">
+        <a class="th" href="#">
+          <img src="http://placehold.it/250x250" alt="" />
+        </a>
+        <h3>Nancy Drew</h3>
+        <p>75 Karma Points</p>
+      </div>
+    </div>
+    <div class="grid-block vertical">
+      <div class="grid-block">
+        <div class="grid-content">
+          <h2>Butter needed for cake!</h2>
+          <p>Hey there! I'm in need of a block of butter to finish my cake!
+            I really need it by 6:00pm tonight for my husbands birthday!
+            Please help!</p>
+          </div>
+        </div>
+        <div class="grid-block">
+          <div class="grid-content">
+            <div class="">
+              <a href="#" class="info button">Message</a>
+              <a href="#" class="primary button">Help name out!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -4,3 +4,10 @@
 .dev-border{
   border: 2px solid $success-color;
 }
+
+.service-list{
+  section{
+    width:20vw;
+  }
+  border: 1px solid $secondary-color;
+}
