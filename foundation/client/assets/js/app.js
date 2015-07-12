@@ -9,6 +9,7 @@
     'hmo.config',
     'hmo.controllers',
     'hmo.models',
+    'hmo.directives',
 
     //foundation
     'foundation',

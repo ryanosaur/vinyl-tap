@@ -1,66 +1,50 @@
 <!doctype html>
 <html lang="en" ng-app="hmo">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation for Apps</title>
-    <link href="/assets/css/app.css"
-          rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'
-          rel='stylesheet' type='text/css'>
-    <link href="http://cdn.foundation5.zurb.com/foundation.css"
-          rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <div class="grid-frame vertical">
-      <div class="grid-block vertical shrink">
-        <div class="grid-content shrink" style="padding: 0;">
-          <div class="menu-group primary">
-            <div class="menu-group-left">
-              <ul class="icon-left menu-bar primary">
-                <li>
-                  <a ui-sref="services"><img
-                  zf-iconic=""
-                  icon="Home"
-                  size="medium"
-                  class="iconic-color-primary"></a>
-                </li>
-              </ul>
-            </div>
-            <div class="menu-group-right">
-              <ul class="icon-left primary menu-bar">
-                <li>
-                  <a ui-sref="new"><img
-                    zf-iconic=""
-                    icon="Person"
-                    size="medium"
-                    class="iconic-color-primary"></a>
-                </li>
-                <li>
-                  <a ui-sref="services"><img
-                    zf-iconic=""
-                    icon="Comment-square"
-                    size="medium"
-                    class="iconic-color-primary"></a>
-                </li>
-                <li>
-                  <a ui-sref="services"><img
-                    zf-iconic=""
-                    icon="Cog"
-                    size="medium"
-                    class="iconic-color-primary"></a>
-                </li>
-              </ul>
-            </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foundation for Apps</title>
+  <link href="/assets/css/app.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href="http://cdn.foundation5.zurb.com/foundation.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="grid-frame vertical">
+    <div class="grid-block vertical shrink">
+      <div class="grid-content shrink" style="padding: 0;">
+        <div class="menu-group primary">
+          <div class="menu-group-left">
+            <ul class="icon-left menu-bar primary">
+              <li>
+                <a ui-sref="albums"><img zf-iconic="" icon="Home" size="medium" class="iconic-color-primary"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu-group-right">
+            <ul class="icon-left primary menu-bar">
+              <li>
+                <a ui-sref="profile"><img zf-iconic="" icon="Person" size="medium" class="iconic-color-primary"></a>
+              </li>
+              <li>
+                <a ui-sref="services"><img zf-iconic="" icon="Comment-square" size="medium" class="iconic-color-primary"></a>
+              </li>
+              <li>
+                <a ui-sref="services"><img zf-iconic="" icon="Cog" size="medium" class="iconic-color-primary"></a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div ui-view class="grid-block">
-      </div>
     </div>
-    <script src="/assets/js/foundation.js"></script>
-    <script src="/assets/js/templates.js"></script>
-    <script src="/assets/js/routes.js"></script>
-    <script src="/assets/js/app.js"></script>
-  </body>
+    <div ui-view class="grid-block">
+    </div>
+  </div>
+  <script src="/assets/js/foundation.js"></script>
+  <script src="/assets/js/templates.js"></script>
+  <script src="/assets/js/routes.js"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+
 </html>
