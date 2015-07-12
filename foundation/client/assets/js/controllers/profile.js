@@ -9,6 +9,7 @@
       $scope.addRecord = function(){
         User.addRecord($state.params.username, $scope.record).success(function(data){
           console.log(data);
+          $scope.record = {};
         })
         .catch(function(err){
           console.log(err);
