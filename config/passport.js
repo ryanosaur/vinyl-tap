@@ -29,7 +29,7 @@ var Passport = function(passport) {
         if (user) {
           return done(null, false, { message: 'That email is already taken.'});
         } else {
-          var newUser = new User();
+          var newUser = new User(req.body);
 
           newUser.email = email;
           newUser.password = newUser.generateHash(password);
