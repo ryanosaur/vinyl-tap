@@ -7,7 +7,7 @@
       User.loginUser($scope.newUser)
       .success(function(data){
         User.setActiveUser(data.user);
-        $state.go('services');
+        $state.go('albums');
       })
       .catch(function(error){
         var errorMessage = error.data.error.message;
@@ -18,7 +18,7 @@
       User.registerUser($scope.newUser)
       .success(function(data){
         User.activeUser(data.user);
-        $state.go('services');
+        $state.go('albums');
       })
       .catch(function(error){
         var errorMessage = error.data.error.message;
