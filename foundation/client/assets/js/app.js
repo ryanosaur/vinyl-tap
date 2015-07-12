@@ -1,15 +1,15 @@
 (function() {
   'use strict';
 
-  angular.module('hmo', [
+  angular.module('VINYLTAP', [
     'ui.router',
     'ngAnimate',
 
     //help-me-out
-    'hmo.config',
-    'hmo.controllers',
-    'hmo.models',
-    'hmo.directives',
+    'VINYLTAP.config',
+    'VINYLTAP.controllers',
+    'VINYLTAP.models',
+    'VINYLTAP.directives',
 
     //foundation
     'foundation',

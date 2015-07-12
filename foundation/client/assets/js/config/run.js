@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('hmo.config.run', [])
+  angular.module('VINYLTAP.config.run', [])
   .run(function(){
     FastClick.attach(document.body);
   });

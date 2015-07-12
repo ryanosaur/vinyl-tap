@@ -1,5 +1,7 @@
 (function() {
-  angular.module('hmo.controller.profile', [])
+  'use strict';
+
+  angular.module('VINYLTAP.controller.profile', [])
     .controller('ProfileController', function($scope, $state, User) {
 
     });

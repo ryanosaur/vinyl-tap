@@ -1,6 +1,7 @@
 (function() {
-  'use strict'
-  angular.module('hmo.directives.recordForm', [])
+  'use strict';
+
+  angular.module('VINYLTAP.directives.recordForm', [])
     .directive('recordForm', function() {
       return {
         restrict: 'E',

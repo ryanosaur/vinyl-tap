@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('hmo.config.routes', [])
+  angular.module('VINYLTAP.config.routes', [])
     .config(function($urlRouterProvider, $locationProvider, $stateProvider) {
       $urlRouterProvider.otherwise('/');
 

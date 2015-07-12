@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('hmo.config', [
-    'hmo.config.routes',
-    'hmo.config.run'
+  angular.module('VINYLTAP.config', [
+    'VINYLTAP.config.routes',
+    'VINYLTAP.config.run'
   ]);
 })();

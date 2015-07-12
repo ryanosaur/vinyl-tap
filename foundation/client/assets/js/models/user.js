@@ -1,5 +1,7 @@
 (function() {
-  angular.module('hmo.model.user', [])
+  'use strict';
+
+  angular.module('VINYLTAP.model.user', [])
   .service('User', function($http){
     this.registerUser = function(user){
       return $http.post('/signup', user);

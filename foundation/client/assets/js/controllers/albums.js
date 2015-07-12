@@ -1,7 +1,8 @@
 (function() {
-  angular.module('hmo.controller.albums', [])
+  'use strict';
+
+  angular.module('VINYLTAP.controller.albums', [])
     .controller('AlbumController', function($scope, $state, User) {
 
     });
 })();
-

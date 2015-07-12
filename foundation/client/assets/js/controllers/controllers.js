@@ -1,7 +1,9 @@
 (function() {
-  angular.module('hmo.controllers', [
-    'hmo.controller.login',
-    'hmo.controller.albums',
-    'hmo.controller.profile'
+  'use strict';
+
+  angular.module('VINYLTAP.controllers', [
+    'VINYLTAP.controller.login',
+    'VINYLTAP.controller.albums',
+    'VINYLTAP.controller.profile'
   ]);
 })();

@@ -1,5 +1,7 @@
 (function() {
-  angular.module('hmo.directives', [
-    'hmo.directives.recordForm'
+  'use strict';
+
+  angular.module('VINYLTAP.directives', [
+    'VINYLTAP.directives.recordForm'
   ])
 })();
