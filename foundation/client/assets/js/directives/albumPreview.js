@@ -9,9 +9,7 @@
           album: '='
         },
         templateUrl: '/templates/directives/albumPreview.html',
-        link: function(scope, element, attrs){
-          console.log('album: ', scope.album);
-        }
+        link: function(scope, element, attrs){}
       };
     });
 })();

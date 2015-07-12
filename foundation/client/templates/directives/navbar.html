@@ -7,14 +7,14 @@
           </li>
         </ul>
       </div>
-      <div class="menu-group-right" ng-hide="isActiveUser">
+      <div class="menu-group-right" ng-hide="activeUser">
         <ul class="icon-left menu-bar primary">
           <li>
             <a ui-sref="auth.login"><img src="/assets/img/login.png"></a>
           </li>
         </ul>
       </div>
-      <div class="menu-group-right" ng-show="isActiveUser">
+      <div class="menu-group-right" ng-show="activeUser">
         <ul class="icon-left primary menu-bar">
           <li>
             <a ui-sref="profile"><img zf-iconic="" icon="Person" size="medium" class="iconic-color-primary"></a>
