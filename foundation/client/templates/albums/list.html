@@ -1,39 +1,7 @@
-<div zf-modal="" id="basicModal">
-  <a zf-close="" class="close-button">×</a>
-  <div class="grid-block vertical">
-    <div class="grid-block">
-      <div class="grid-content">
-        <a href="#" class="th">
-          <img src="https://placehold.it/350x350">
-        </a>
-      </div>
-    </div>
-    <div class="grid-block">
-      <div class="grid-block">
-        <div class="grid-content">
-          <h3>Album Name</h3>
-          <h5><em>for trade by: </em><a href="#">Username</a></h5>
-          <span>Artist Name</span>
-          <br>
-          <em>genre</em>
-        </div>
-      </div>
-      <div class="grid-block vertical">
-        <div class="grid-block">&nbsp;</div>
-        <div class="grid-block shrink">
-          <div class="grid-content">
-            <div class="right">
-              <button class="button">Request Swap</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<album-preview album="users[0].inventory[0]"></album-preview>
 <div class="grid-block album-list">
   <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-    <li ng-repeat='i in [1,2,3,4,5,6,7,8,9,0]'>
+    <li ng-repeat='i in [1,2,3,4,5,6,7,8,9,0] track by $index'>
       <a href="#" zf-open="basicModal" class="th">
         <img src="https://placehold.it/450x450">
       </a>

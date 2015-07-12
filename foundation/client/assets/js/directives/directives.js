@@ -3,6 +3,7 @@
 
   angular.module('VINYLTAP.directives', [
     'VINYLTAP.directives.recordForm',
+    'VINYLTAP.directives.albumPreview',
     'VINYLTAP.directives.navbar'
   ])
 })();
