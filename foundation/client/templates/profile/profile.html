@@ -1,6 +1,9 @@
+<div class="grid-block vertical shrink">
+  <navbar ng-controller="NavController"></navbar>
+</div>
 <div zf-modal="" id="basicModal">
   <a zf-close="" class="close-button">×</a>
-  <record-form></record-form>
+  <record-form ng-controller="ProfileController"></record-form>
 </div>
 <div class="grid-block">
   <a href="#" zf-open="basicModal" class="th">

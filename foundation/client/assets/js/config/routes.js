@@ -15,7 +15,7 @@
           }
         })
         .state('profile', {
-          url: '/profile',
+          url: '/profile/:username',
           templateUrl: 'templates/profile/profile.html',
           controller: 'ProfileController',
           animation: {
