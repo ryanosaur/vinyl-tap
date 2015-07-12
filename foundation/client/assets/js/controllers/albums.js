@@ -53,7 +53,16 @@
             }]
           }
         ];
+        $scope.albums = [];
+        $scope.users.forEach(function(user){
+          user.inventory.forEach(function(album){
+            $scope.albums.push({ username: user.username, album: album });
+          });
+        });
+        console.log($scope.albums);
       })();
-
+      $scope.openPreview = function(index){
+        $scope.activeAlbum = $scope.albums[index];
+      }
     });
 })();

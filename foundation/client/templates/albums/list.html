@@ -1,17 +1,17 @@
 <div class="grid-block vertical shrink">
   <navbar ng-controller="NavController"></navbar>
 </div>
-<album-preview album="users[0].inventory[0]"></album-preview>
+<album-preview album="activeAlbum"></album-preview>
 <div class="grid-block album-list">
   <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-    <li ng-repeat='i in [1,2,3,4,5,6,7,8,9,0] track by $index'>
-      <a href="#" zf-open="basicModal" class="th">
-        <img src="https://placehold.it/450x450">
+    <li ng-repeat='album in albums track by $index'>
+      <a href="#" ng-click="openPreview($index)" zf-open="albumPreview" class="th">
+        <img ng-src="{{album.album.image_url}}">
       </a>
-      <h3>Album Name</h3>
-      <span>Artist Name</span>
+      <h3>{{album.album.album}}</h3>
+      <span>{{album.album.artist}}</span>
       <br>
-      <em>genre</em>
+      <em>{{album.album.year}} / {{album.album.genre}}</em>
     </li>
   </ul>
 </div>

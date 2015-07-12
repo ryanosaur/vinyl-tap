@@ -1,21 +1,21 @@
-<div zf-modal="" id="basicModal">
+<div zf-modal="" id="albumPreview">
   <a zf-close="" class="close-button">×</a>
   <div class="grid-block vertical">
     <div class="grid-block">
       <div class="grid-content">
-        <a href="#" class="th">
-          <img src="https://placehold.it/350x350">
+        <a href="#" class="">
+          <img ng-src="{{album.album.image_url}}">
         </a>
       </div>
     </div>
     <div class="grid-block">
       <div class="grid-block">
         <div class="grid-content">
-          <h3>{{album.album}}</h3>
-          <h5><em>for trade by: </em><a href="#">Username</a></h5>
-          <span>{{album.artist}}</span>
+          <h3>{{album.album.album}}</h3>
+          <h5><em>for trade by: </em><a ui-serf="profile({ username: album.username })">{{album.username}}</a></h5>
+          <span>{{album.album.artist}}</span>
           <br>
-          <em>genre</em>
+          <em>{{album.album.year}} / {{album.album.genre}}</em>
         </div>
       </div>
       <div class="grid-block vertical">
