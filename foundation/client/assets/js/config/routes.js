@@ -6,6 +6,14 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
+    .state('albums', {
+      url: '/',
+      templateUrl: 'templates/albums/list.html',
+      controller: 'AlbumController',
+      animation: {
+        enter: 'fadeIn'
+      }
+    })
     .state('auth', {
       url: '/auth',
       templateUrl: 'templates/auth/auth.html',
