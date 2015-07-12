@@ -5,7 +5,7 @@
     .directive('recordForm', function() {
       return {
         restrict: 'E',
-        templateUrl: '/templates/directives/recordForm/recordForm.html'
+        templateUrl: '/templates/directives/recordForm.html'
       };
     });
 })();
