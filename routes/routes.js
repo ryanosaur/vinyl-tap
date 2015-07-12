@@ -55,7 +55,7 @@ var routes = function(app, passport) {
   });
 
 
-  router.get('/users', function(res, req, next) {
+  router.get('/users', function(req, res, next) {
     User.find({}).exec(function(error, users) {
       if (error) {
         console.log(error);
