@@ -1,3 +1,3 @@
 module.exports = {
-  'url' : process.env.MONGOLAB_URI || 'mongodb://localhost/hmo'
+  'url' : process.env.MONGOLAB_URI || 'mongodb://localhost/vinyltap'
 };

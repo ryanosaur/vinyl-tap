@@ -1,4 +1,5 @@
 <form ng-submit="login()">
+  <h1>{{error}}</h1>
   <h3>Welcome back!</h3>
   <label>
     <span class="">Email</span>
@@ -6,7 +7,7 @@
   </label>
   <label>
     <span class="">Password</span>
-    <input type="text" ng-model="newUser.password">
+    <input type="password" ng-model="newUser.password">
   </label>
   <div class="left">
     New here? <a ui-sref="auth.register">Register!</a>

@@ -1,22 +1,26 @@
 (function() {
   angular.module('hmo.controller.login', [])
-  .controller('LoginController', function($scope, User) {
+  .controller('LoginController', function($scope, $state, User) {
     $scope.login = function(){
       User.loginUser($scope.newUser)
       .success(function(data){
-        console.log(data);
+        User.setActiveUser(data.user);
+        $state.go('services');
       })
       .catch(function(error){
-        console.log(error);
+        var errorMessage = error.data.error.message;
+        $scope.error = errorMessage;
       })
     }
     $scope.register = function(){
       User.registerUser($scope.newUser)
       .success(function(data){
-        console.log(data);
+        User.activeUser(data.user);
+        $state.go('services');
       })
       .catch(function(error){
-        console.log(error);
+        var errorMessage = error.data.error.message;
+        $scope.error = errorMessage;
       })
     }
   });

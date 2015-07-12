@@ -7,5 +7,11 @@
     this.loginUser = function(user){
       return $http.post('/login', user);
     }
+    this.setActiveUser = function(user){
+      this.activeUser = user;
+    }
+    this.getActiveUser = function(){
+      return this.activeUser;
+    }
   });
 })();
