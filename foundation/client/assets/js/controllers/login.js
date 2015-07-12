@@ -17,7 +17,7 @@
     $scope.register = function(){
       User.registerUser($scope.newUser)
       .success(function(data){
-        User.activeUser(data.user);
+        User.setActiveUser(data.user);
         $state.go('albums');
       })
       .catch(function(error){
