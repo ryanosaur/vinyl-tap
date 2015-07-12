@@ -1,0 +1,17 @@
+<form ng-submit="login()">
+  <h3>Welcome back!</h3>
+  <label>
+    <span class="">Email</span>
+    <input type="text" ng-model="newUser.email">
+  </label>
+  <label>
+    <span class="">Password</span>
+    <input type="text" ng-model="newUser.password">
+  </label>
+  <div class="left">
+    New here? <a ui-sref="auth.register">Register!</a>
+  </div>
+  <div class="right">
+    <button type="submit" class="success button">Login</button>
+  </div>
+</form>

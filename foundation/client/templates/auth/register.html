@@ -1,0 +1,25 @@
+<form ng-submit="register()">
+  <h3>Join the family!</h3>
+  <label>
+    <span class="">Name</span>
+    <input type="text" ng-model="newUser.name">
+  </label>
+  <label>
+    <span class="">Email</span>
+    <input type="text" ng-model="newUser.email">
+  </label>
+  <label>
+    <span class="">Password</span>
+    <input type="text" ng-model="newUser.password">
+  </label>
+  <label>
+    <span class="">Re-enter Password</span>
+    <input type="text" ng-model="newUser.password_conf">
+  </label>
+  <div class="left">
+    Already a friend? <a ui-sref="auth.login">Sign in!</a>
+  </div>
+  <div class="right">
+    <button type="submit" class="success button">Register</button>
+  </div>
+</form>

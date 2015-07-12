@@ -1,12 +1,19 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express  = require('express');
+var path     = require('path');
+var favicon  = require('serve-favicon');
+var logger   = require('morgan');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var flash    = require('connect-flash');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var cookieParser = require('cookie-parser');
+var bodyParser   = require('body-parser');
+var session      = require('express-session');
+
+var configDB = require('./config/database.js');
+mongoose.connect(configDB.url);
+
+require('./config/passport')(passport); // pass passport for configuration
 
 var app = express();
 
@@ -22,8 +29,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// required for passport
+app.use(session({ secret: 'T398745T9345TG89374HJ9F78H398FG29B92F762G8RG3Q' }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+var routes = require('./routes/routes')(app, passport);
+
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
