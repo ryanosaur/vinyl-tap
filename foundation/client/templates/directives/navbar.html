@@ -17,7 +17,7 @@
       <div class="menu-group-right" ng-show="activeUser">
         <ul class="icon-left primary menu-bar">
           <li>
-            <a ui-sref="profile"><img zf-iconic="" icon="Person" size="medium" class="iconic-color-primary"></a>
+            <a ui-sref="profile({ username: activeUser.username })"><img zf-iconic="" icon="Person" size="medium" class="iconic-color-primary"></a>
           </li>
           <li>
             <a ui-sref="services"><img zf-iconic="" icon="Comment-square" size="medium" class="iconic-color-primary"></a>
