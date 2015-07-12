@@ -1,9 +1,9 @@
-<form>
+<form ng-submit="addRecord()">
   <div class="grid-block">
     <div class="small-12 medium-6 grid-content">
       <label>
         Artist
-        <input type="text" placeholder="Pink Floyd">
+        <input type="text" placeholder="Pink Floyd" ng-model="record.artist" required>
       </label>
     </div>
   </div>
@@ -11,15 +11,15 @@
     <div class="small-12 medium-6 grid-content">
       <label>
         Album
-        <input type="text" placeholder="The Dark Side of the Moon">
+        <input type="text" placeholder="The Dark Side of the Moon" ng-model="record.album" required>
       </label>
     </div>
   </div>
   <div class="grid-block">
     <div class="small-12 medium-6 grid-content">
       <label>
-        Date Released
-        <input type="text" placeholder="1 March 1973">
+        Year Released
+        <input type="text" placeholder="1973" ng-model="record.year" required>
       </label>
     </div>
   </div>
@@ -27,7 +27,7 @@
     <div class="small-12 medium-6 grid-content">
       <label>
         Genre
-        <input type="text" placeholder="Progressive rock">
+        <input type="text" placeholder="Progressive rock" ng-model="record.genre" required>
       </label>
     </div>
   </div>
@@ -35,11 +35,11 @@
     <div class="small-12 medium-6 grid-content">
       <label>
         Image Url
-        <input type="text" placeholder="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png">
+        <input type="text" placeholder="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" ng-model="record.image_url">
       </label>
     </div>
   </div>
   <div class="right">
-    <button class="button">Add to Inventory</button>
+    <button type="submit" class="button">Add to Inventory</button>
   </div>
 </form>
