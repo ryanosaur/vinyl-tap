@@ -2,22 +2,26 @@
   <navbar ng-controller="NavController"></navbar>
 </div>
 <div class="grid-block">
-  <div class="grid-block shrink dev-border">
-    <section class="block-list">
-      <header>{{userProfile.username}}'s Swaps</header>
-      <ul>
-        <li ng-repeat='swap in swaps track by $index'>
-          <a href="#">
-            <img ng-src='{{album.image_url}}' class='left'>
-            <h3>{{.album}}</h3>
-            <span>{{album.artist}}</span>
-            <br>
-            <em>{{album.year}} / {{album.genre}}</em>
-            <span class="clearfix"></span>
-          </a>
-        </li>
-      </ul>
-    </section>
+  <div class="grid-block vertical shrink dev-border">
+    <div class="clearfix"></div>
+    <div class="grid-block shrink">
+      <a ng-click="getIncoming()">Incoming</a> | <a ng-click="getOutgoing()">Outgoing</a>
+    </div>
+    <div class="grid-block">
+      <section class="block-list">
+        <header>{{userProfile.username}}'s Swaps</header>
+        <ul class="swap-list">
+          <li ng-repeat='swap in activeSwaps track by $index'>
+            <a href="#">
+              <img ng-src='{{swap.owner_album.image_url}}' class='left'>
+              <h3>{{swap.owner_album.album}}</h3>
+              <span>With: {{swap.owner}}</span>
+              <span class="clearfix"></span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
   </div>
   <div class="grid-block dev-border">
   </div>
