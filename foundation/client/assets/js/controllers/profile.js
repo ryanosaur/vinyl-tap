@@ -8,7 +8,6 @@ angular.module('VINYLTAP.controller.profile', [])
       User.getUser($state.params.username)
       .success(function(user){
         $scope.userProfile = user;
-        console.log(user);
         $scope.isMyAccount = User.isMyAccount($scope.activeUser.username,
           $scope.userProfile.username);
       })
@@ -29,7 +28,9 @@ angular.module('VINYLTAP.controller.profile', [])
       });
     }
     $scope.openPreview = function(index){
-        $scope.activeAlbum = $scope.userProfile.inventory[index];
+      var album = $scope.userProfile.inventory[index];
+      album.username = $scope.userProfile.username;
+      $scope.activeAlbum = album;
     }
   });
 })();
