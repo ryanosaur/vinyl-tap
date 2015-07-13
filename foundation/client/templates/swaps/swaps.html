@@ -16,10 +16,10 @@
         <header>{{userProfile.username}}'s Swaps</header>
         <ul class="swap-list">
           <li ng-repeat='swap in activeSwaps track by $index'>
-            <a href="#">
+            <a ng-click="setActiveSwap($index)">
               <img ng-src='{{swap.owner_album.image_url}}' class='left'>
               <h3>{{swap.owner_album.album}}</h3>
-              <span>With: {{swap.owner}}</span>
+              <span>With: {{swap.requester}}</span>
               <span class="clearfix"></span>
             </a>
           </li>
@@ -28,6 +28,6 @@
     </div>
   </div>
   <div class="grid-block">
-    <swap-select swap="activeSwap"></swap-select>
+    <swap-select></swap-select>
   </div>
 </div>
