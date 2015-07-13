@@ -12,7 +12,7 @@
       <div class="grid-block">
         <div class="grid-content">
           <h3>{{album.album}}</h3>
-          <h5><em>for trade by: </em><a ui-sref="profile({ username: album.username })">{{album.username}}</a></h5>
+          <h5 ng-hide="active"><em>for trade by: </em><a ui-sref="profile({ username: album.username })">{{album.username}}</a></h5>
           <span>{{album.artist}}</span>
           <br>
           <em>{{album.year}} / {{album.genre}}</em>
@@ -23,7 +23,7 @@
         <div class="grid-block shrink">
           <div class="grid-content">
             <div class="right">
-              <button class="button">Request Swap</button>
+              <button class="button" ng-hide="active">Request Swap</button>
             </div>
           </div>
         </div>

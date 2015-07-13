@@ -14,8 +14,6 @@
               $scope.albums.push(album);
             });
           });
-          console.log($scope.users);
-          console.log($scope.albums);
         })
         .catch(function(error){
           console.log(error);
