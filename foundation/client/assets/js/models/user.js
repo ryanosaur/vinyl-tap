@@ -24,5 +24,8 @@
     this.getUser = function(username){
       return $http.get('/users/' + username);
     }
+    this.isMyAccount = function(activeUsername, otherUsername){
+      return activeUsername === otherUsername;
+    }
   });
 })();
