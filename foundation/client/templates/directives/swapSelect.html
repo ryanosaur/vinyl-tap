@@ -1,4 +1,4 @@
-<div class="grid-block vertical" ng-controller="ProfileController">
+<div class="grid-block vertical" ng-controller="SwapController">
   <div class="grid-block shrink">
     <div class="grid-content">
       <div>
@@ -11,17 +11,17 @@
   </div>
   <div class="grid-block user-albums-block">
     <section class="block-list">
-      <header>{{userProfile.username}}'s Albums</header>
+      <header>{{swap.requester}}'s Albums</header>
       <ul class="user-albums">
         <li ng-repeat='album in albums track by $index'>
           <a href="#" ng-click="openPreview($index)" zf-open="albumPreview">
-            <img ng-src='{{album.image_url}}' class='left'>
+            <img ng-src='{{swap.album.image_url}}' class='left'>
             <h3>{{album.album}}</h3>
             <span>{{album.artist}}</span>
             <br>
             <p><em>{{album.year}} / {{album.genre}}</em></p>
             <br>
-            <button class="button">Select</button>
+            <button class="button" ng-click="selectAlbum()">Select</button>
             <span class="clearfix"></span>
           </a>
         </li>
