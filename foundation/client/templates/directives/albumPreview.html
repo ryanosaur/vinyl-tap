@@ -8,14 +8,17 @@
         </a>
       </div>
     </div>
-    <div class="grid-block">
+    <div class="grid-block" ng-controller="ModalController">
       <div class="grid-block">
         <div class="grid-content">
-          <h3>{{album.album}}</h3>
+          <h3 ng-hide="editing">{{album.album}}</h3>
+          <input ng-show="editing" type="text" ng-model="album.album">
           <h5 ng-hide="active"><em>for trade by: </em><a ui-sref="profile({ username: album.username })">{{album.username}}</a></h5>
-          <span>{{album.artist}}</span>
+          <span ng-hide="editing">{{album.artist}}</span>
+          <input ng-show="editing" type="text" ng-model="album.artist">
           <br>
-          <em>{{album.year}} / {{album.genre}}</em>
+          <em ng-hide="editing"><span>{{album.year}}</span> / <span>{{album.genre}}</span></em>
+          <input ng-show="editing" type="text" ng-model="album.year"> <input ng-show="editing" type="text" ng-model="album.genre">
         </div>
       </div>
       <div class="grid-block vertical">
@@ -24,7 +27,8 @@
           <div class="grid-content">
             <div class="right">
               <button class="button" ng-hide="active">Request Swap</button>
-              <button class="button" ng-show="active">Edit</button>
+              <button class="button" ng-click="editing = true" ng-show="active && !editing">Edit</button>
+              <button class="button" ng-click="saveEdit()" ng-show="active && editing">Save</button>
               <button class="button" ng-show="active">Delete</button>
             </div>
           </div>

@@ -83,11 +83,12 @@ var routes = function(app, passport) {
   });
 
   router.patch("/users/:username/albums", function(req, res) {
-    User.findOneAndUpdate({
-      username: req.params.username
-    }, req.body, {
-      new: true
-    }, function(error, updatedInventory) {
+    console.log('check this shit!!!',req.body);
+    User.findOneAndUpdate(
+      {"username": req.params.username, 'inventory._id': req.body._id },
+      {$set: { 'inventory.$._id': req.body } },
+      { new: true },
+      function(error, updatedInventory) {
       if (error) {
         console.log(error);
         res.status(400).json({
@@ -99,6 +100,7 @@ var routes = function(app, passport) {
           error: 'Album not found'
         });
       }
+      console.log(updatedInventory, 'new shit!!');
       res.json(updatedInventory);
 
     });

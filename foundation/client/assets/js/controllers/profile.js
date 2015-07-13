@@ -27,6 +27,19 @@ angular.module('VINYLTAP.controller.profile', [])
         console.log(err);
       });
     }
+    $scope.saveEdit = function(){
+      console.log('working?');
+      User.saveEdit($state.params.username, $scope.album)
+      .success(function(user){
+        $scope.userProfile = user;
+        $scope.editing = false;
+        $scope.$apply();
+        $state.reload();
+      })
+      .catch(function(err){
+        console.log(err);
+      });
+    }
     $scope.openPreview = function(index){
       var album = $scope.userProfile.inventory[index];
       album.username = $scope.userProfile.username;
