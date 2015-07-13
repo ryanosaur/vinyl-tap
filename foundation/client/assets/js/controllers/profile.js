@@ -8,7 +8,8 @@
         User.getUser($state.params.username)
         .success(function(user){
           $scope.userProfile = user;
-          console.log('userProfile: ' + $scope.userProfile);
+          $scope.isMyAccount = User.isMyAccount($scope.activeUser.username,
+            $scope.userProfile.username);
         })
         .catch(function(error){
           console.log(error);
