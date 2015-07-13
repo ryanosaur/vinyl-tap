@@ -34,6 +34,9 @@ angular.module('VINYLTAP.controller.profile', [])
         console.log(error);
       });
     }
+    $scope.saveEdit = function(){
+
+    }
     $scope.openPreview = function(index){
       $scope.activeAlbum = $scope.albums[index];
     }
