@@ -6,6 +6,10 @@ var Album = require('../models/album');
 var shuffle = require('knuth-shuffle').knuthShuffle, shuffledAlbums;
 
 var routes = function(app, passport) {
+  router.get('/session', function(req, res, next){
+    res.json(req.user);
+  });
+
   router.post('/users/:username/albums', function(req, res, next) {
     var newAlbum = req.body;
     newAlbum.username = req.params.username;
