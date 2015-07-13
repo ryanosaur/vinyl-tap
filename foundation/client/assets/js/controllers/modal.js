@@ -11,5 +11,15 @@ angular.module('VINYLTAP.controller.modal', [])
         console.log(error);
       });
     }
+    $scope.deleteAlbum = function(){
+      Album.deleteAlbum($scope.album.username, $scope.album._id).success(function(response){
+        console.log(response);
+        $scope.$apply();
+        $state.reload();
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+    }
   });
 })();
