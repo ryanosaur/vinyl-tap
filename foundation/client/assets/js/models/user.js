@@ -15,9 +15,6 @@
     this.getActiveUser = function(){
       return this.activeUser;
     }
-    this.addRecord = function(username, record){
-      return $http.post('/users/' + username + '/albums', record);
-    }
     this.getUsers = function(){
       return $http.get('/users');
     }

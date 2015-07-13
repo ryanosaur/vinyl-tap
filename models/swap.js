@@ -5,6 +5,7 @@ var swapSchema = mongoose.Schema({
     requester: { type: String, required: true },
     owner_album: { type: Number, required: true },
     requester_album: { type: String },
+    createdAt: { type: Date, default: Date.now },
     state: { type: String, default: 'active' }
 });
 

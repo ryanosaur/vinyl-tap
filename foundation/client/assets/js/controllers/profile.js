@@ -2,7 +2,7 @@
   'use strict';
 
 angular.module('VINYLTAP.controller.profile', [])
-  .controller('ProfileController', function($scope, $state, User) {
+  .controller('ProfileController', function($scope, $state, User, Album) {
     (function(){
       $scope.activeUser = User.activeUser;
       User.getUser($state.params.username)
@@ -14,17 +14,24 @@ angular.module('VINYLTAP.controller.profile', [])
       .catch(function(error){
         console.log(error);
       });
+      Album.getAlbumsForUser($state.params.username)
+      .success(function(albums){
+        $scope.albums = albums;
+      })
+      .catch(function(error){
+        console.log(error);
+      });
     })();
     $scope.addRecord = function(){
-      User.addRecord($state.params.username, $scope.record)
-      .success(function(user){
-        $scope.userProfile = user;
+      Album.addRecord($scope.activeUser.username, $scope.record)
+      .success(function(album){
+        $scope.albums.unshift(album);
         $scope.record = {};
         $scope.$apply();
         $state.reload();
       })
-      .catch(function(err){
-        console.log(err);
+      .catch(function(error){
+        console.log(error);
       });
     }
     $scope.saveEdit = function(){
@@ -41,9 +48,7 @@ angular.module('VINYLTAP.controller.profile', [])
       });
     }
     $scope.openPreview = function(index){
-      var album = $scope.userProfile.inventory[index];
-      album.username = $scope.userProfile.username;
-      $scope.activeAlbum = album;
+      $scope.activeAlbum = $scope.albums[index];
     }
   });
 })();
