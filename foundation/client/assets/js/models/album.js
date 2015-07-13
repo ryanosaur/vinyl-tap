@@ -12,8 +12,8 @@
     this.getAlbumsForUser = function(username){
       return $http.get('/users/' + username + '/albums');
     }
-    this.updateAlbum = function(username, id){
-      return $http.patch('/users/' + username + '/albums/' + id);
+    this.updateAlbum = function(username, id, album){
+      return $http.patch('/users/' + username + '/albums/' + id, album);
     }
     this.deleteAlbum = function(username, id){
       return $http.delete('/users/' + username + '/albums/' + id);
