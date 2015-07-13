@@ -21,5 +21,8 @@
     this.getUsers = function(){
       return $http.get('/users');
     }
+    this.getUser = function(username){
+      return $http.get('/users/' + username);
+    }
   });
 })();

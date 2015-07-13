@@ -8,3 +8,18 @@
 .album-list{
   padding: 20px 10px 10px 10px;
 }
+
+.user-albums{
+  width: 100vw;
+  img{
+    width: 100px;
+    margin-right: 10px;
+  }
+  li {
+    padding: 5px;
+    margin: 0;
+  }
+  a {
+    padding: 5px; display: block;
+  }
+}

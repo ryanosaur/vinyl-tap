@@ -1,14 +1,33 @@
-<div class="grid-block vertical shrink">
+<div class="grid-block vertical shrink dev-border">
   <navbar ng-controller="NavController"></navbar>
 </div>
 <div zf-modal="" id="basicModal">
   <a zf-close="" class="close-button">×</a>
   <record-form ng-controller="ProfileController"></record-form>
 </div>
-<div class="grid-block">
-  <div class="grid-content">
-  <a href="#" zf-open="basicModal" >
-    <button class="button">Add Record</button>
-  </a>
-</div>
+<div class="grid-block dev-border">
+  <div class="grid-block shrink dev-border">
+    <div class="grid-content">
+      <a href="#" zf-open="basicModal" >
+        <button class="button">Add Record</button>
+      </a>
+    </div>
+  </div>
+  <div class="grid-block dev-border">
+    <section class="block-list">
+      <header>{{userProfile.username}}'s Albums</header>
+      <ul class="user-albums">
+        <li ng-repeat='album in userProfile.inventory track by $index'>
+          <a href="#">
+            <img ng-src='{{album.image_url}}' class='left'>
+            <h3>{{album.album}}</h3>
+            <span>{{album.artist}}</span>
+            <br>
+            <em>{{album.year}} / {{album.genre}}</em>
+            <span class="clearfix"></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
 </div>

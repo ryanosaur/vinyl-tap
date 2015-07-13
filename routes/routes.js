@@ -32,7 +32,7 @@ var routes = function(app, passport) {
     });
   });
 
-  router.delete("/users/:username/albums", function(req, res) {
+  router.patch("/users/:username/albums", function(req, res) {
     User.findOneAndUpdate({
       username: req.params.username
     }, req.body, {
@@ -54,6 +54,17 @@ var routes = function(app, passport) {
     });
   });
 
+  router.get('/users/:username', function(req, res, next) {
+    User.findOne({ username: req.params.username }).exec(function(error, users) {
+      if (error) {
+        console.log(error);
+        res.status(400).json({
+          error: error
+        });
+      }
+      res.json(users);
+    });
+  });
 
   router.get('/users', function(req, res, next) {
     User.find({}).exec(function(error, users) {
@@ -65,7 +76,7 @@ var routes = function(app, passport) {
       }
       res.json(users);
     });
-  })
+  });
 
   router.post('/signup', function(req, res, next) {
     passport.authenticate('local-signup', function(error, user, info) {
