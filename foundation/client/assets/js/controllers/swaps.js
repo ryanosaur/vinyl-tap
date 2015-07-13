@@ -8,7 +8,8 @@
         User.getUser($state.params.username)
         .success(function(user){
           $scope.userProfile = user;
-          if($scope.activeUser.username !== $scope.userProfile.username){
+          if(!$scope.activeUser
+            || ($scope.activeUser.username !== $scope.userProfile.username)){
             $state.go('profile', { username: $scope.userProfile.username });
           }
         })
