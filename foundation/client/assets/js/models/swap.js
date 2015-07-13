@@ -6,7 +6,7 @@
     this.createSwap = function(swap){
       return $http.post('/swaps', swap);
     }
-    this.updateSwap = function(swap, id){
+    this.updateSwap = function(id, swap){
       return $http.patch('/swaps/' + id, swap);
     }
     this.getSwapsToMe = function(username){

@@ -110,7 +110,7 @@ var routes = function(app, passport) {
   });
 
   router.get('/swaps/from/:username', function(req, res, next){
-    Swap.find({ requester: req.params.username }).exec(function(error, swaps){
+    Swap.find({ requester: req.params.username, state: 'new' }).exec(function(error, swaps){
       if(error){
         console.log(error);
         res.status(400).json({ error: error });
@@ -120,7 +120,7 @@ var routes = function(app, passport) {
   });
 
   router.get('/swaps/to/:username', function(req, res, next){
-    Swap.find({ owner: req.params.username }).exec(function(error, swaps){
+    Swap.find({ owner: req.params.username, state: 'new' }).exec(function(error, swaps){
       if(error){
         console.log(error);
         res.status(400).json({ error: error });
