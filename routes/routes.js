@@ -30,7 +30,7 @@ var routes = function(app, passport) {
   });
 
   router.get('/users/:username/albums', function(req, res, next){
-    Album.find({ username: req.params.username }).exec(function(error, usersAlbums){
+    Album.find({ username: req.params.username }).sort({ createdAt: 'desc' }).exec(function(error, usersAlbums){
       if(error){
         console.log(error);
         res.status(400).json({ error: error });

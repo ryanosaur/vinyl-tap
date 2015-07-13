@@ -23,21 +23,19 @@ angular.module('VINYLTAP.controller.profile', [])
       });
     })();
     $scope.addRecord = function(){
-      User.addRecord($state.params.username, $scope.record)
-      .success(function(user){
-        $scope.userProfile = user;
+      Album.addRecord($scope.activeUser.username, $scope.record)
+      .success(function(album){
+        $scope.albums.unshift(album);
         $scope.record = {};
         $scope.$apply();
         $state.reload();
       })
-      .catch(function(err){
-        console.log(err);
+      .catch(function(error){
+        console.log(error);
       });
     }
     $scope.openPreview = function(index){
-      var album = $scope.userProfile.inventory[index];
-      album.username = $scope.userProfile.username;
-      $scope.activeAlbum = album;
+      $scope.activeAlbum = $scope.albums[index];
     }
   });
 })();
