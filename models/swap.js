@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var swapsSchema = mongoose.Schema({
+var swapSchema = mongoose.Schema({
     owner: { type: String, required: true },
     requester: { type: String, required: true },
     owner_album: { type: Number, required: true },
@@ -8,4 +8,4 @@ var swapsSchema = mongoose.Schema({
     state: { type: String, default: 'active' }
 });
 
-module.exports = mongoose.model('Swaps', swapsSchema);
+module.exports = mongoose.model('Swap', swapSchema);
