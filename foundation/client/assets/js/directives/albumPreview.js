@@ -6,7 +6,8 @@
       return {
         restrict: 'E',
         scope: {
-          album: '='
+          album: '=',
+          active: '='
         },
         templateUrl: '/templates/directives/albumPreview.html',
         link: function(scope, element, attrs){}
