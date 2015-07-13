@@ -6,12 +6,12 @@
   <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
     <li ng-repeat='album in albums track by $index'>
       <a href="#" ng-click="openPreview($index)" zf-open="albumPreview" class="th">
-        <img ng-src="{{album.album.image_url}}">
+        <img ng-src="{{album.image_url}}">
       </a>
-      <h3>{{album.album.album}}</h3>
-      <span>{{album.album.artist}}</span>
+      <h3>{{album.album}}</h3>
+      <span>{{album.artist}}</span>
       <br>
-      <em>{{album.album.year}} / {{album.album.genre}}</em>
+      <em>{{album.year}} / {{album.genre}}</em>
     </li>
   </ul>
 </div>

@@ -1,0 +1,24 @@
+<div class="grid-block vertical shrink">
+  <navbar ng-controller="NavController"></navbar>
+</div>
+<div class="grid-block">
+  <div class="grid-block shrink dev-border">
+    <section class="block-list">
+      <header>{{userProfile.username}}'s Swaps</header>
+      <ul>
+        <li ng-repeat='album in userProfile.inventory track by $index'>
+          <a href="#">
+            <img ng-src='{{album.image_url}}' class='left'>
+            <h3>{{album.album}}</h3>
+            <span>{{album.artist}}</span>
+            <br>
+            <em>{{album.year}} / {{album.genre}}</em>
+            <span class="clearfix"></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <div class="grid-block dev-border">
+  </div>
+</div>

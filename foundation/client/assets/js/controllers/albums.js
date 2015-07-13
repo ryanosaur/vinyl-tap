@@ -10,7 +10,8 @@
           $scope.albums = [];
           $scope.users.forEach(function(user){
             user.inventory.forEach(function(album){
-              $scope.albums.push({ username: user.username, album: album });
+              album.username = user.username;
+              $scope.albums.push(album);
             });
           });
           console.log($scope.users);

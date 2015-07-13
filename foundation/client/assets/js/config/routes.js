@@ -14,6 +14,14 @@
             enter: 'fadeIn'
           }
         })
+        .state('swaps', {
+          url: '/profile/:username/swaps',
+          templateUrl: 'templates/swaps/swaps.html',
+          controller: 'SwapsController',
+          animation: {
+            enter: 'hingeInFromTop'
+          }
+        })
         .state('profile', {
           url: '/profile/:username',
           templateUrl: 'templates/profile/profile.html',
