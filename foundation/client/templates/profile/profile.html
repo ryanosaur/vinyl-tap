@@ -1,19 +1,27 @@
-<div class="grid-block vertical shrink dev-border">
+<div class="grid-block vertical shrink">
   <navbar ng-controller="NavController"></navbar>
 </div>
 <div zf-modal="" id="basicModal">
   <a zf-close="" class="close-button">×</a>
   <record-form ng-controller="ProfileController"></record-form>
 </div>
-<div class="grid-block dev-border">
-  <div class="grid-block shrink dev-border">
+<div class="grid-block">
+  <div class="grid-block shrink">
     <div class="grid-content">
-      <a href="#" zf-open="basicModal" >
-        <button class="button">Add Record</button>
-      </a>
+      <img ng-src="{{userProfile.image_url || '/assets/img/placeholder.jpg'}}">
+      <div>
+        <h3>
+          {{userProfile.username}}
+        </h3>
+      </div>
+      <div>
+        <a href="#" zf-open="basicModal" >
+          <button class="button">Add Record</button>
+        </a>
+      </div>
     </div>
   </div>
-  <div class="grid-block dev-border">
+  <div class="grid-block user-albums-block">
     <section class="block-list">
       <header>{{userProfile.username}}'s Albums</header>
       <ul class="user-albums">

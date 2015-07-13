@@ -15,9 +15,12 @@
         });
       })();
       $scope.addRecord = function(){
-        User.addRecord($state.params.username, $scope.record).success(function(data){
-          console.log(data);
+        User.addRecord($state.params.username, $scope.record)
+        .success(function(user){
+          $scope.userProfile = user;
           $scope.record = {};
+          $scope.$apply();
+          $state.reload();
         })
         .catch(function(err){
           console.log(err);
