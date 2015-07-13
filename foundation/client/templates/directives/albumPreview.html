@@ -1,3 +1,6 @@
+
+<zf-notification-set id="main-notifications" position="top-left"></zf-notification-set>
+
 <div zf-modal="" id="albumPreview">
   <a zf-close="" class="close-button">×</a>
   <div class="grid-block vertical">
@@ -26,7 +29,7 @@
         <div class="grid-block shrink">
           <div class="grid-content">
             <div class="right">
-              <button class="button" ng-hide="active || !activeUser" ng-click="createSwap()">Request Swap</button>
+              <a class="button" ng-hide="active || !activeUser" ng-click="createSwap()" href="#" title="Request Added" content="Success!" color="success" autoclose="3000" zf-notify="main-notifications">Request Swap</a>
               <button class="button" ng-click="editing = true" ng-show="active && !editing">Edit</button>
               <button class="button" ng-click="saveEdit()" ng-show="active && editing">Save</button>
               <button class="button" ng-click="deleteAlbum()" ng-show="active">Delete</button>
