@@ -3,6 +3,7 @@ var router = express.Router();
 var User = require('../models/user');
 var Swap = require('../models/swap');
 var Album = require('../models/album');
+var shuffle = require('knuth-shuffle').knuthShuffle, shuffledAlbums;
 
 var routes = function(app, passport) {
   router.post('/users/:username/albums', function(req, res, next) {
@@ -25,7 +26,8 @@ var routes = function(app, passport) {
         console.log(error);
         res.status(400).json({ error: error });
       }
-      res.json(usersAlbums);
+      shuffledAlbums = shuffle(usersAlbums.slice(0));
+      res.json(shuffledAlbums);
     });
   });
 
