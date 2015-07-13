@@ -26,7 +26,7 @@
         <div class="grid-block shrink">
           <div class="grid-content">
             <div class="right">
-              <button class="button" ng-hide="active">Request Swap</button>
+              <button class="button" ng-hide="active || !activeUser" ng-click="createSwap()">Request Swap</button>
               <button class="button" ng-click="editing = true" ng-show="active && !editing">Edit</button>
               <button class="button" ng-click="saveEdit()" ng-show="active && editing">Save</button>
               <button class="button" ng-show="active">Delete</button>

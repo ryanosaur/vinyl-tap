@@ -3,11 +3,11 @@
   <h3>Welcome back!</h3>
   <label>
     <span class="">Email</span>
-    <input autofocus="true" type="text" ng-model="newUser.email">
+    <input autofocus="true" type="email" ng-model="newUser.email" required>
   </label>
   <label>
     <span class="">Password</span>
-    <input type="password" ng-model="newUser.password">
+    <input type="password" ng-model="newUser.password" required>
   </label>
   <div class="left">
     New here? <a ui-sref="auth.register">Register!</a>
