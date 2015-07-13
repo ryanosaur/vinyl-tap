@@ -11,6 +11,15 @@ angular.module('VINYLTAP.controller.modal', [])
         requester: $scope.activeUser.username,
         owner: $scope.album.username,
         owner_album: $scope.album
+      })
+      .success(function(data){
+          console.log(data);
+          setTimeout(function(){
+            $state.reload();
+          },2700)
+      })
+      .catch(function(error){
+        console.log(error);
       });
     }
     $scope.saveEdit = function(){

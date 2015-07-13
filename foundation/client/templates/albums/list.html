@@ -2,6 +2,7 @@
   <navbar ng-controller="NavController"></navbar>
 </div>
 <album-preview album="activeAlbum" active="isMyAccount" ng-cloak></album-preview>
+
 <div class="grid-block album-list">
   <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
     <li ng-repeat='album in albums track by $index'>
