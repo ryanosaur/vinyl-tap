@@ -13,7 +13,7 @@
       this.activeUser = user;
     }
     this.getActiveUser = function(){
-      return this.activeUser;
+      return $http.get('/session');
     }
     this.getUsers = function(){
       return $http.get('/users');

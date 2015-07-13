@@ -2,10 +2,14 @@
   <navbar ng-controller="NavController"></navbar>
 </div>
 <div class="grid-block">
-  <div class="grid-block vertical shrink dev-border">
+  <div class="grid-block vertical shrink">
     <div class="clearfix"></div>
     <div class="grid-block shrink">
-      <a ng-click="getIncoming()">Incoming</a> | <a ng-click="getOutgoing()">Outgoing</a>
+      <span class="right">
+        <a ng-click="getIncoming()">Incoming</a>
+        &nbsp;|&nbsp;<a ng-click="getOutgoing()">Outgoing</a>
+        &nbsp;|&nbsp;<a href="#">Archived</a>
+      </span>
     </div>
     <div class="grid-block">
       <section class="block-list">
@@ -23,6 +27,7 @@
       </section>
     </div>
   </div>
-  <div class="grid-block dev-border">
+  <div class="grid-block">
+    <swap-select></swap-select>
   </div>
 </div>
