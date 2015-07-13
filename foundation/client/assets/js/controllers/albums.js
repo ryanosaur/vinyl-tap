@@ -2,19 +2,12 @@
   'use strict';
 
   angular.module('VINYLTAP.controller.albums', [])
-    .controller('AlbumController', function($scope, $state, User) {
+    .controller('AlbumController', function($scope, $state, User, Album) {
       (function(){
-        User.getUsers()
-        .success(function(users){
+        Album.getAlbums()
+        .success(function(albums){
           $scope.activeUser = User.activeUser;
-          $scope.users = users;
-          $scope.albums = [];
-          $scope.users.forEach(function(user){
-            user.inventory.forEach(function(album){
-              album.username = user.username;
-              $scope.albums.push(album);
-            });
-          });
+          $scope.albums = albums;
         })
         .catch(function(error){
           console.log(error);

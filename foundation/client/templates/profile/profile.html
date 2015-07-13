@@ -26,7 +26,7 @@
     <section class="block-list">
       <header>{{userProfile.username}}'s Albums</header>
       <ul class="user-albums">
-        <li ng-repeat='album in userProfile.inventory track by $index'>
+        <li ng-repeat='album in albums track by $index'>
           <a href="#" ng-click="openPreview($index)" zf-open="albumPreview">
             <img ng-src='{{album.image_url}}' class='left'>
             <h3>{{album.album}}</h3>

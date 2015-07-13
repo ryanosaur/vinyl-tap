@@ -2,7 +2,7 @@
   'use strict';
 
 angular.module('VINYLTAP.controller.profile', [])
-  .controller('ProfileController', function($scope, $state, User) {
+  .controller('ProfileController', function($scope, $state, User, Album) {
     (function(){
       $scope.activeUser = User.activeUser;
       User.getUser($state.params.username)
@@ -10,6 +10,13 @@ angular.module('VINYLTAP.controller.profile', [])
         $scope.userProfile = user;
         $scope.isMyAccount = User.isMyAccount($scope.activeUser.username,
           $scope.userProfile.username);
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+      Album.getAlbumsForUser($state.params.username)
+      .success(function(albums){
+        $scope.albums = albums;
       })
       .catch(function(error){
         console.log(error);
