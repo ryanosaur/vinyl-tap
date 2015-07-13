@@ -13,8 +13,6 @@
               $scope.albums.push({ username: user.username, album: album });
             });
           });
-          console.log($scope.users);
-          console.log($scope.albums);
         })
         .catch(function(error){
           console.log(error);
