@@ -11,7 +11,7 @@
   </div> -->
   <div class="grid-block user-albums-block">
     <section class="block-list">
-      <header>{{swap.requester}}'s Albums</header>
+      <header>Choose one of {{swap.requester}}'s Albums to swap</header>
       <ul class="user-albums">
         <li ng-repeat='album in albums track by $index'>
           <a href="#" ng-click="openPreview($index)" zf-open="albumPreview">
@@ -21,7 +21,7 @@
             <br>
             <p><em>{{album.year}} / {{album.genre}}</em></p>
             <br>
-            <button class="button" ng-click="selectAlbum()">Select</button>
+            <button class="button" ng-click="swapAlbums($index)">Swap</button>
             <span class="clearfix"></span>
           </a>
         </li>
