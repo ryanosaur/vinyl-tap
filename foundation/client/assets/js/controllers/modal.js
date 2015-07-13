@@ -14,7 +14,9 @@ angular.module('VINYLTAP.controller.modal', [])
       })
       .success(function(data){
           console.log(data);
-          setTimeout(function(){/* Look mah! No name! */},2000)
+          setTimeout(function(){
+            $state.reload();
+          },2700)
       })
       .catch(function(error){
         console.log(error);
