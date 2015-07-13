@@ -6,7 +6,7 @@ var userSchema = mongoose.Schema({
     username : { type: String, required: true, unique: true },
     password : { type: String, required: true },
     name: { type: String, required: true },
-    inventory: [{ artist: String, album: String, year: Number, genre: String, image_url: String, state: { type: String, default: 'unavailable' } }]
+    createdAt: { type: Date, default: Date.now }
 });
 
 userSchema.methods.generateHash = function(password) {
