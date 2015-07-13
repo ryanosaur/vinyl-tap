@@ -6,10 +6,10 @@
     <section class="block-list">
       <header>{{userProfile.username}}'s Swaps</header>
       <ul>
-        <li ng-repeat='album in userProfile.inventory track by $index'>
+        <li ng-repeat='swap in swaps track by $index'>
           <a href="#">
             <img ng-src='{{album.image_url}}' class='left'>
-            <h3>{{album.album}}</h3>
+            <h3>{{.album}}</h3>
             <span>{{album.artist}}</span>
             <br>
             <em>{{album.year}} / {{album.genre}}</em>

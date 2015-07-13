@@ -10,7 +10,7 @@ angular.module('VINYLTAP.controller.modal', [])
       Swap.createSwap({
         requester: $scope.activeUser.username,
         owner: $scope.album.username,
-        owner_album: $scope.album._id
+        owner_album: $scope.album
       });
     }
     $scope.saveEdit = function(){
