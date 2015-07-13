@@ -30,5 +30,9 @@
     this.saveEdit = function(username, record){
       return $http.patch('/users/' + username + '/albums', record);
     }
+    // this.saveEdit = function(username, record, recId){
+    //   return $http.patch('/users/' + username + '/albums/' + recId, record);
+    // }
+
   });
 })();

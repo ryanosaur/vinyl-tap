@@ -83,11 +83,10 @@ var routes = function(app, passport) {
   });
 
   router.patch("/users/:username/albums", function(req, res) {
-    console.log('check this shit!!!',req.body);
+    console.log('check this shit!!!',req.body._id);
     User.findOneAndUpdate(
-      {"username": req.params.username, 'inventory._id': req.body._id },
-      {$set: { 'inventory.$._id': req.body } },
-      { new: true },
+      {"username": req.params.username, "inventory._id": req.body._id },
+      { $set: { 'inventory._id': req.body } },
       function(error, updatedInventory) {
       if (error) {
         console.log(error);
@@ -105,6 +104,47 @@ var routes = function(app, passport) {
 
     });
   });
+
+
+//   router.patch("/users/:username/albums", function(req, res) {
+//     User.find({
+//   $and: [
+//     {
+//       "username": req.params.username
+//     },
+//     {
+//       "inventory._id": req.body._id
+//     }
+//   ]
+// }).forEach(function(item)
+// {
+//     console.log(item);
+//
+//     // User.save(item);
+// });
+//   });
+
+  // router.patch('/users/:username/albums/:id', function(req, res){
+  //   User.findOne({'username': req.params.username}, function(err, user){
+  //     var thing = user.inventory.map(function(t){
+  //       console.log('check this shit');
+  //       if(t._id == req.params.id){return t;}
+  //     });
+  //     console.log(thing);
+  //     thing[0].artist = req.body.artist;
+  //     thing[0].album = req.body.album;
+  //     thing[0].year = req.body.year;
+  //     thing[0].genre = req.body.genre;
+  //     thing[0].image_url = req.body.image_url;
+  //     thing[0].state = req.body.state;
+  //     thing[0].username = req.body.username;
+  //     console.log(thing[0])
+  //     user.save(function(er, us){
+  //       if(er){console.log(er); res.json('fuck off');}
+  //       res.json(us);
+  //     });
+  //   });
+  // });
 
   router.get('/users/:username', function(req, res, next) {
     User.findOne({ username: req.params.username }).exec(function(error, users) {
