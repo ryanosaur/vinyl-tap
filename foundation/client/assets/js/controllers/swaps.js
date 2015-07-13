@@ -19,7 +19,6 @@
         Swap.getSwapsFromMe($state.params.username)
         .success(function(outgoing){
           $scope.outgoing = outgoing;
-          $scope.activeSwaps = $scope.outgoing;
           console.log($scope.outgoing);
         })
         .catch(function(error){
@@ -28,6 +27,8 @@
         Swap.getSwapsToMe($state.params.username)
         .success(function(incoming){
           $scope.incoming = incoming;
+          $scope.activeSwaps = $scope.incoming;
+          $scope.$broadcast('activeSwap', $scope.activeSwaps[0]);
           console.log($scope.incoming);
         })
         .catch(function(error){
@@ -39,6 +40,9 @@
       }
       $scope.getOutgoing = function(){
         $scope.activeSwaps = $scope.outgoing;
+      }
+      $scope.setActiveSwap = function(index){
+        $scope.$broadcast('activeSwap', $scope.activeSwaps[index]);
       }
     });
 })();

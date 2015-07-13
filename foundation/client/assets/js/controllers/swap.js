@@ -9,5 +9,15 @@ angular.module('VINYLTAP.controller.swap', [])
     $scope.selectAlbum = function(){
       console.log('I CHOOSE YOU PIKACHU');
     }
+    $scope.$on('activeSwap', function(event, activeSwap){
+      $scope.swap = activeSwap;
+      Album.getAlbumsForUser(activeSwap.requester)
+      .success(function(albums){
+        $scope.albums = albums;
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+    });
   });
 })();
