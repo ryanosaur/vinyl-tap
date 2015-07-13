@@ -5,6 +5,9 @@
     .directive('swapSelect', function() {
       return {
         restrict: 'E',
+        scope: {
+          swap: '='
+        },
         templateUrl: '/templates/directives/swapSelect.html'
       };
     });
