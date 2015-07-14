@@ -7,6 +7,7 @@
     "postinstall": "cd foundation && ../node_modules/.bin/bower install && ../node_modules/.bin/gulp build"
   },
   "dependencies": {
+    "MD5": "^1.2.2",
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.0.0",
     "bower": "^1.4.1",
