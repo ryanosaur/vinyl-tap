@@ -7,7 +7,6 @@
         $scope.activeUser = User.activeUser;
       })();
       $scope.logout = function(){
-        console.log("hello?");
         User.logoutUser()
         .success(function(data){
           User.activeUser = null;
