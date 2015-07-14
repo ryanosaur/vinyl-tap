@@ -3,19 +3,19 @@
   <h3>Join the family!</h3>
   <label>
     <span class="">Username</span>
-    <input type="text" ng-model="newUser.username">
+    <input type="text" ng-model="newUser.username" required>
   </label>
   <label>
     <span class="">Name</span>
-    <input type="text" ng-model="newUser.name">
+    <input type="text" ng-model="newUser.name" required>
   </label>
   <label>
     <span class="">Email</span>
-    <input type="text" ng-model="newUser.email">
+    <input type="email" ng-model="newUser.email" required>
   </label>
   <label>
     <span class="">Password</span>
-    <input type="password" ng-model="newUser.password">
+    <input type="password" ng-model="newUser.password" required>
   </label>
   <div class="left">
     Already a friend? <a ui-sref="auth.login">Sign in!</a>
