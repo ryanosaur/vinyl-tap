@@ -8,7 +8,7 @@
         </ul>
       </div>
       <div class="menu-group-right" ng-hide="activeUser" ng-cloak>
-        <ul class="icon-left menu-bar primary">
+        <ul class="icon-left vertical medium-horizontal menu-bar menu-bar primary">
           <li>
             <a ui-sref="auth.login"><img src="/assets/img/login.png"></a>
           </li>
@@ -18,15 +18,15 @@
         </ul>
       </div>
       <div class="menu-group-right" ng-show="activeUser">
-        <ul class="icon-left primary menu-bar">
+        <ul class="icon-left condense primary menu-bar">
           <li>
-            <a ui-sref="profile({ username: activeUser.username })"><img zf-iconic="" icon="person" size="medium" class="iconic-color-primary"></a>
+            <a ui-sref="profile({ username: activeUser.username })"><img zf-iconic="" icon="person" size="medium" class="iconic-color-primary">Profile</a>
           </li>
           <li>
-            <a ui-sref="swaps({ username: activeUser.username })"><img zf-iconic="" icon="envelope" size="medium" class="iconic-color-primary"></a>
+            <a ui-sref="swaps({ username: activeUser.username })"><img zf-iconic="" icon="envelope" size="medium" class="iconic-color-primary">Trade</a>
           </li>
           <li>
-            <a ui-sref="albums"><img zf-iconic="" icon="cog" size="medium" class="iconic-color-primary"></a>
+            <a ng-click="logout()"><img zf-iconic="" icon="share-boxed" size="medium" class="iconic-color-primary">Logout</a>
           </li>
         </ul>
       </div>
