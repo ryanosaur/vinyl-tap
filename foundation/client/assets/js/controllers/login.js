@@ -10,7 +10,6 @@
         $state.go('albums');
       })
       .catch(function(error){
-        // var errorMessage = error.data.error.message;
         $scope.error = "There was a problem with your login. Please try again.";
       });
     }

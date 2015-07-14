@@ -6,5 +6,17 @@
       (function(){
         $scope.activeUser = User.activeUser;
       })();
+      $scope.logout = function(){
+        console.log("hello?");
+        User.logoutUser()
+        .success(function(data){
+          User.activeUser = null;
+          console.log("success", data);
+          $state.go('auth.logout');
+        })
+        .catch(function(error){
+          console.log("error", error);
+        });
+      }
     });
 })();

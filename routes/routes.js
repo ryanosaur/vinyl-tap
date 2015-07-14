@@ -207,7 +207,9 @@ var routes = function(app, passport) {
 
   router.get("/logout", function(req, res) {
     req.logout();
-    res.redirect('/');
+    res.json({
+      message: 'Logout success!'
+    });
   });
 
   return router;
