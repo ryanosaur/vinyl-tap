@@ -181,9 +181,13 @@ var routes = function(app, passport) {
     passport.authenticate('local-login', function(error, user, info) {
       console.log(error, user, info);
       if (error) {
-        console.log(error);
+        res.status(400).json({
+          message: 'could not authenicate: ',
+          error: error
+        });
       }
       if (!user) {
+        res.contentType("text/javascript");
         res.status(400).json({
           message: 'could not authenicate: ',
           error: info
@@ -199,6 +203,11 @@ var routes = function(app, passport) {
         });
       });
     })(req, res, next);
+  });
+
+  router.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect('/');
   });
 
   return router;

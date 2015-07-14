@@ -50,6 +50,14 @@
           animation: {
             enter: 'hingeInFromTop'
           }
+        })
+        .state('auth.logout', {
+          url: '/logout',
+          templateUrl: 'templates/auth/logout.html',
+          controller: 'LoginController',
+          animation: {
+            enter: 'hingeInFromTop'
+          }
         });
 
       $locationProvider.html5Mode({

@@ -9,6 +9,9 @@
     this.loginUser = function(user){
       return $http.post('/login', user);
     }
+    this.logoutUser = function(user){
+      return $http.get('/logout');
+    }
     this.setActiveUser = function(user){
       this.activeUser = user;
     }
