@@ -1,8 +1,6 @@
-var express = require('express');
-var router = express.Router();
 var Swap = require('../../models/swap');
 
-var routes = function() {
+var routes = function(router) {
   router.post('/swaps', function(req, res, next){
     var swap = new Swap(req.body);
 

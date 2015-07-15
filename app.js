@@ -41,9 +41,20 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-var routes = require('./routes/routes')(app, passport);
+var router = express.Router();
+var users = require('./routes/users/users');
+var swaps = require('./routes/swaps/swaps');
+var albums = require('./routes/albums/albums');
+var auth = require('./routes/auth/auth');
 
-app.use('/', routes);
+app.use('/', albums(router));
+app.use('/', swaps(router));
+app.use('/', users(router));
+app.use('/', auth(app, passport, router));
+
+// var routes = require('./routes/routes')(app, passport);
+//
+// app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

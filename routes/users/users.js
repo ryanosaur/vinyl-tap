@@ -1,8 +1,6 @@
-var express = require('express');
-var router = express.Router();
 var User = require('../../models/user');
 
-var routes = function() {
+var routes = function(router) {
   router.get('/users/:username', function(req, res, next) {
     User.findOne({ username: req.params.username }).exec(function(error, users) {
       if (error) {
@@ -26,7 +24,7 @@ var routes = function() {
       res.json(users);
     });
   });
-  
+
   return routes
 }
 

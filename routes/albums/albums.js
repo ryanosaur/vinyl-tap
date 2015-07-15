@@ -1,9 +1,7 @@
-var express = require('express');
-var router = express.Router();
 var shuffle = require('knuth-shuffle').knuthShuffle, shuffledAlbums;
 var Album = require('../../models/album');
 
-var routes = function() {
+var routes = function(router) {
   router.post('/users/:username/albums', function(req, res, next) {
     var newAlbum = req.body;
     newAlbum.username = req.params.username;

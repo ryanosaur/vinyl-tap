@@ -1,8 +1,6 @@
-var express = require('express');
-var router = express.Router();
 var User = require('../../models/user');
 
-var routes = function(app, passport) {
+var routes = function(app, passport, router) {
   router.get('/session', function(req, res, next){
     res.json(req.user);
   });
